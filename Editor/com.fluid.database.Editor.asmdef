@@ -1,0 +1,12 @@
+{
+    "name": "com.fluid.database.Editor",
+    "references": [
+        "com.fluid.database"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
