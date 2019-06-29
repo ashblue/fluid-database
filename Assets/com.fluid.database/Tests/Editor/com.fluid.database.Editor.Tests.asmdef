@@ -1,0 +1,19 @@
+{
+    "name": "com.fluid.database.Editor.Tests",
+    "references": [
+        "com.fluid.database",
+        "com.fluid.database.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
