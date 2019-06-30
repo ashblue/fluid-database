@@ -10,13 +10,13 @@ namespace CleverCrow.Fluid.Databases {
         private GlobalBoolMonitorInternal _internal;
 
         [SerializeField]
-        private KeyValueDefinitionBool _boolean;
+        private KeyValueDefinitionBool _boolean = null;
 
         [SerializeField]
-        private UnityEvent _eventTrue;
+        private UnityEvent _eventTrue = null;
 
         [SerializeField]
-        private UnityEvent _eventFalse;
+        private UnityEvent _eventFalse = null;
 
         private void Start () {
             _internal = new GlobalBoolMonitorInternal(
