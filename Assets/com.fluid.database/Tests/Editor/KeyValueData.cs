@@ -1,7 +1,7 @@
-﻿using CleverCrow.DungeonsAndHumans.Databases;
+﻿using CleverCrow.Fluid.Databases;
 using NUnit.Framework;
 
-namespace CleverCrow.DungeonsAndHumans.Editors.Testing.Databases {
+namespace CleverCrow.Fluid.Databases.Editors {
     public class KeyValueData {
         private KeyValueDataBase<int> _keyValue;
 

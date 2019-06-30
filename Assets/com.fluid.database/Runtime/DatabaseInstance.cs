@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CleverCrow.DungeonsAndHumans.Databases {
+namespace CleverCrow.Fluid.Databases {
     public interface IDatabaseInstance {
         IKeyValueData<bool> Bools { get; }
         IKeyValueData<string> Strings { get; }

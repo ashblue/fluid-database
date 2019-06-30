@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CleverCrow.DungeonsAndHumans.Databases {
+namespace CleverCrow.Fluid.Databases {
     public interface IKeyValueData<V> {
         void Clear ();
         V Get (string key, V defaultValue = default);

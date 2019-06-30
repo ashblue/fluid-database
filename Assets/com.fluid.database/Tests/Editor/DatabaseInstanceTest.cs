@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
-namespace CleverCrow.DungeonsAndHumans.Databases.Editors {
+namespace CleverCrow.Fluid.Databases.Editors {
     public class DatabaseInstanceTest {
         public class SaveMethod {
             [Test]

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace CleverCrow.DungeonsAndHumans.Databases {
+namespace CleverCrow.Fluid.Databases {
     public class KeyValueDataInt : KeyValueDataBase<int> {
         [System.Serializable]
         private class SaveData {
