@@ -62,3 +62,4 @@ npm run commit
 ---
 
 This project was generated with [Oyster Package Generator](https://github.com/ashblue/oyster-package-generator).
+
