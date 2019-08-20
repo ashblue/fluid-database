@@ -7,6 +7,8 @@ namespace CleverCrow.Fluid.Databases {
     }
 
     public abstract class KeyValueDefinitionBase<V> : ScriptableObject, IKeyValueDefinition<V> {
+        protected const string CREATE_PATH = "Fluid/Database";
+
         public string key;
         public V defaultValue;
 
