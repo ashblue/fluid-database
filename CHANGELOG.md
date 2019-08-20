@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/ashblue/fluid-database/compare/v1.0.1...v1.0.2) (2019-08-20)
+
+
+### Bug Fixes
+
+* asset creation menu now uses the fluid namespace ([4d58835](https://github.com/ashblue/fluid-database/commit/4d58835))
+
 ## [1.0.1](https://github.com/ashblue/fluid-database/compare/v1.0.0...v1.0.1) (2019-06-30)
 
 
