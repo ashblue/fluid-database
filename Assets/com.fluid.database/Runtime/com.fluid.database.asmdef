@@ -1,7 +1,8 @@
 {
     "name": "com.fluid.database",
     "references": [
-        "GUID:5d226a1776aa442e788ca15f9d2a42d0"
+        "com.fluid.simple-singleton",
+        "com.fluid.unity-event-plus"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
