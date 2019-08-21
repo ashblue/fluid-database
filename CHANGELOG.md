@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/ashblue/fluid-database/compare/v1.0.2...v2.0.0) (2019-08-21)
+
+
+### Features
+
+* **events:** replaced with Unity Event Plus package ([7c25b5a](https://github.com/ashblue/fluid-database/commit/7c25b5a))
+* **global-bool-monitor:** adds array support ([13c98a9](https://github.com/ashblue/fluid-database/commit/13c98a9))
+
+
+### BREAKING CHANGES
+
+* **global-bool-monitor:** You'll need to move any global bool monitor component values to the array value.
+Make sure to note what the original value is before upgrading.
+
 ## [1.0.2](https://github.com/ashblue/fluid-database/compare/v1.0.1...v1.0.2) (2019-08-20)
 
 
