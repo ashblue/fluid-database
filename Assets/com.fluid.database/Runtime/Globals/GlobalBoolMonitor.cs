@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using CleverCrow.Fluid.Databases.Utilities;
+using CleverCrow.Fluid.Utilities.UnityEvents;
 
 namespace CleverCrow.Fluid.Databases {
     /// <summary>
@@ -14,10 +14,10 @@ namespace CleverCrow.Fluid.Databases {
         private KeyValueDefinitionBool[] _booleans = new KeyValueDefinitionBool[1];
 
         [SerializeField]
-        private UnityEvent _eventTrue;
+        private UnityEvent _eventTrue = new UnityEvent();
 
         [SerializeField]
-        private UnityEvent _eventFalse;
+        private UnityEvent _eventFalse = new UnityEvent();
 
         private void Start () {
             var copies = _booleans.Select(Instantiate).ToArray<IKeyValueDefinition<bool>>();
