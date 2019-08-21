@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using CleverCrow.Fluid.Databases.Utilities;
@@ -10,18 +11,18 @@ namespace CleverCrow.Fluid.Databases {
         private GlobalBoolMonitorInternal _internal;
 
         [SerializeField]
-        private KeyValueDefinitionBool _boolean = null;
+        private KeyValueDefinitionBool[] _booleans = new KeyValueDefinitionBool[1];
 
         [SerializeField]
-        private UnityEvent _eventTrue = null;
+        private UnityEvent _eventTrue;
 
         [SerializeField]
-        private UnityEvent _eventFalse = null;
+        private UnityEvent _eventFalse;
 
         private void Start () {
+            var copies = _booleans.Select(Instantiate).ToArray<IKeyValueDefinition<bool>>();
             _internal = new GlobalBoolMonitorInternal(
-                GlobalDatabaseManager.Instance.Database,
-                Instantiate(_boolean));
+                GlobalDatabaseManager.Instance.Database, copies);
 
             _internal.EventTrue.AddListener(_eventTrue.Invoke);
             _internal.EventFalse.AddListener(_eventFalse.Invoke);
@@ -38,18 +39,25 @@ namespace CleverCrow.Fluid.Databases {
 
     public class GlobalBoolMonitorInternal {
         private readonly IDatabaseInstance _database;
-        private readonly IKeyValueDefinition<bool> _definition;
+        private readonly IKeyValueDefinition<bool>[] _definitions;
 
         public IUnityEvent EventTrue { get; } = new UnityEventPlus();
         public IUnityEvent EventFalse { get; } = new UnityEventPlus();
 
-        public GlobalBoolMonitorInternal (IDatabaseInstance database, IKeyValueDefinition<bool> definition) {
+        public GlobalBoolMonitorInternal (IDatabaseInstance database, IKeyValueDefinition<bool>[] definitions) {
             _database = database;
-            _definition = definition;
+            _definitions = definitions;
         }
 
         public void UpdateEvent () {
-            if (_database.Bools.Get(_definition.Key, _definition.DefaultValue)) {
+            var isTrue = true;
+            foreach (var definition in _definitions) {
+                if (!_database.Bools.Get(definition.Key, definition.DefaultValue)) {
+                    isTrue = false;
+                }
+            }
+
+            if (isTrue) {
                 EventTrue.Invoke();
             } else {
                 EventFalse.Invoke();
@@ -57,7 +65,9 @@ namespace CleverCrow.Fluid.Databases {
         }
 
         public void BindChangeMonitor () {
-            _database.Bools.AddKeyListener(_definition.Key, BindMethod);
+            foreach (var definition in _definitions) {
+                _database.Bools.AddKeyListener(definition.Key, BindMethod);
+            }
         }
 
         private void BindMethod (bool value) {
@@ -65,7 +75,9 @@ namespace CleverCrow.Fluid.Databases {
         }
 
         public void UnbindChangeMonitor () {
-            _database.Bools.RemoveKeyListener(_definition.Key, BindMethod);
+            foreach (var definition in _definitions) {
+                _database.Bools.RemoveKeyListener(definition.Key, BindMethod);
+            }
         }
     }
 }
