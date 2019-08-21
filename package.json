@@ -5,6 +5,7 @@
     "description": "A simple key value pair database for int, float, string, and bool. Easily extendable to custom database types via generics.",
     "unity": "2019.1",
     "dependencies": {
-        "com.fluid.simple-singleton": "1.0.0"
+        "com.fluid.simple-singleton": "1.0.0",
+        "com.fluid.unity-event-plus": "1.0.0"
     }
 }

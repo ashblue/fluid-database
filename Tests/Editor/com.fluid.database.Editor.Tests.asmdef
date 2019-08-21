@@ -2,7 +2,7 @@
     "name": "com.fluid.database.Editor.Tests",
     "references": [
         "com.fluid.database",
-        "com.fluid.database.Editor"
+        "com.fluid.unity-event-plus"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
