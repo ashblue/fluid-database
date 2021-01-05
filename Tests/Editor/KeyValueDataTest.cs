@@ -129,6 +129,27 @@ namespace CleverCrow.Fluid.Databases.Editors {
             }
         }
 
+        public class HasMethod : KeyValueData {
+            [Test]
+            public void It_should_return_true_if_it_has_the_key () {
+                var key = "asdf";
+
+                _keyValue.Set(key, 7);
+                var result = _keyValue.Has(key);
+
+                Assert.AreEqual(true, result);
+            }
+
+            [Test]
+            public void It_should_return_false_if_it_does_not_have_the_key () {
+                var key = "asdf";
+
+                var result = _keyValue.Has(key);
+
+                Assert.AreEqual(false, result);
+            }
+        }
+
         public class ClearMethod : KeyValueData {
             [Test]
             public void It_should_clear_written_values () {

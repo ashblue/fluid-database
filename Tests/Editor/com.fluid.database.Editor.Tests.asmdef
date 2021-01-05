@@ -2,18 +2,24 @@
     "name": "com.fluid.database.Editor.Tests",
     "references": [
         "com.fluid.database",
-        "com.fluid.unity-event-plus"
-    ],
-    "optionalUnityReferences": [
-        "TestAssemblies"
+        "com.fluid.unity-event-plus",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": []
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

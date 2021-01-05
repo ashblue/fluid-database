@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 namespace CleverCrow.Fluid.Databases {
     public interface IKeyValueData<V> {
-        void Clear ();
         V Get (string key, V defaultValue = default);
         void Set (string key, V value);
+        bool Has (string key);
+
         void AddKeyListener (string key, Action<V> callback);
         void RemoveKeyListener (string test, Action<V> callback);
+
+        void Clear ();
         string Save ();
         void Load (string save);
     }
@@ -27,6 +30,10 @@ namespace CleverCrow.Fluid.Databases {
             foreach (var callback in callbacks) {
                 callback.Invoke(value);
             }
+        }
+
+        public bool Has (string key) {
+            return _data.ContainsKey(key);
         }
 
         public V Get (string key, V defaultValue = default) {
