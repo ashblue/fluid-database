@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/ashblue/fluid-database/compare/v2.0.0...v2.1.0) (2021-01-05)
+
+
+### Features
+
+* **database:** all databases now support Has() checks ([f0847d6](https://github.com/ashblue/fluid-database/commit/f0847d6))
+
 # [2.0.0](https://github.com/ashblue/fluid-database/compare/v1.0.2...v2.0.0) (2019-08-21)
 
 
