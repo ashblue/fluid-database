@@ -3,6 +3,7 @@
 namespace CleverCrow.Fluid.Databases {
     public interface IKeyValueDefinition<V> {
         string Key { get; }
+
         V DefaultValue { get; }
     }
 
