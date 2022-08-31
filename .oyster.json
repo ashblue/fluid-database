@@ -1,0 +1,23 @@
+{
+  "description": "A simple key value pair database for int, float, string, and bool. Easily extendable to custom database types via generics.",
+  "displayName": "Fluid Database",
+  "keywords": [
+    "unity package manager",
+    "unity3d",
+    "database",
+    "upm"
+  ],
+  "oysterVersion": "2.1.0",
+  "packageName": "com.fluid.database",
+  "packageScope": "com.fluid",
+  "unityVersion": "2019.1",
+  "author": {
+    "name": "Ash Blue",
+    "email": "ash@blueashes.com",
+    "url": "https://twitter.com/ashbluewd"
+  },
+  "repo": {
+    "gitUrl": "https://github.com/ashblue/fluid-database",
+    "gitUrlNoHttp": "github.com/ashblue/fluid-database"
+  }
+}
