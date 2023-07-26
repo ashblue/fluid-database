@@ -1,6 +1,44 @@
 # Fluid Database
 
-A simple key value pair database for int, float, string, and bool. Easily extendable to custom database types via generics.
+A simple key value pair database for int, float, string, and bool. Easily extendable to custom database types via generics. It is non-implementation specific.
+
+## Usage
+
+```csharp
+var db = new DatabaseInstance();
+
+# Edit values
+db.Strings.Set("myKey", "my value")
+var myVal = db.Strings.Get("myKey", "optional fallback value");
+
+# Supports Bools, Strings, Ints, and Floats
+
+# Do whatever you want with the save
+var save = db.Save();
+
+# Load the save
+var newDb = new DatabaseInstance();
+newDb.Load(save);
+```
+
+For full API docs see the following files.
+
+* [DatabaseInstance](https://github.com/ashblue/fluid-database/blob/develop/Assets/com.fluid.database/Runtime/DatabaseInstance.cs)
+* [KeyValueDataBase](https://github.com/ashblue/fluid-database/blob/develop/Assets/com.fluid.database/Runtime/KeyValueData/KeyValueDataBase.cs)
+
+### Unity Global Database Object
+
+There is also a global database object you can instantly load into your game with zero effort.
+
+```csharp
+GlobalDatabaseManager
+    # Calling `Instance` lazy loads a global instance with nothing in it
+    .Instance
+    .Database
+    .Strings.Set("myKey", "myVal)
+```
+
+This is useful if you want to maintain a global do not destroy instance between scenes. It also supports saving and loading. Full docs [here](https://github.com/ashblue/fluid-database/blob/develop/Assets/com.fluid.database/Runtime/Globals/GlobalDatabaseManager.cs).
 
 ## Installation
 
