@@ -1,0 +1,16 @@
+{
+    "name": "com.fluid.database",
+    "references": [
+        "com.fluid.simple-singleton",
+        "com.fluid.unity-event-plus"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
